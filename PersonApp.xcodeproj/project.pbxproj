@@ -14,6 +14,7 @@
 		FA592BD329E0B6D0007D8ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA592BD229E0B6D0007D8ADF /* Assets.xcassets */; };
 		FA592BD629E0B6D0007D8ADF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA592BD429E0B6D0007D8ADF /* LaunchScreen.storyboard */; };
 		FA592BE629E0B9EF007D8ADF /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA592BE529E0B9EF007D8ADF /* PersonCell.swift */; };
+		FA592BEA29E0BCE1007D8ADF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA592BE929E0BCE1007D8ADF /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FA592BD529E0B6D0007D8ADF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA592BD729E0B6D0007D8ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA592BE529E0B9EF007D8ADF /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		FA592BE929E0BCE1007D8ADF /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		FA592BC829E0B6CE007D8ADF /* PersonApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA592BE829E0BC7A007D8ADF /* DataSource */,
 				FA592BE229E0B8C2007D8ADF /* NetworkLayer */,
 				FA592BE129E0B8B8007D8ADF /* Scene */,
 				FA592BE029E0B8A3007D8ADF /* Core */,
@@ -100,6 +103,14 @@
 				FA592BE529E0B9EF007D8ADF /* PersonCell.swift */,
 			);
 			path = PersonCell;
+			sourceTree = "<group>";
+		};
+		FA592BE829E0BC7A007D8ADF /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				FA592BE929E0BCE1007D8ADF /* DataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 				FA592BCE29E0B6CE007D8ADF /* MainVC.swift in Sources */,
 				FA592BCA29E0B6CE007D8ADF /* AppDelegate.swift in Sources */,
 				FA592BE629E0B9EF007D8ADF /* PersonCell.swift in Sources */,
+				FA592BEA29E0BCE1007D8ADF /* DataSource.swift in Sources */,
 				FA592BCC29E0B6CE007D8ADF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,22 +12,23 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        setDelagates()
     }
-
-
 }
 
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
+    private func setDelagates() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonCell
+        cell.setLabel()
+        return cell
     }
-    
-    
 }
 
