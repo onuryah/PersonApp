@@ -10,12 +10,16 @@ import Foundation
 protocol MainBussinessLayer {
     func fetchData()
     var personArray: [Person] { get }
+    func reloadTableView(completion: @escaping () -> Void)
 }
 
 class MainVM: MainBussinessLayer {
     var personArray: [Person] = []
+//    let queue = DispatchQueue(label: "com.wait.queue", qos: .background, attributes: .concurrent)
+    let group = DispatchGroup()
     var pagination: String?
     func fetchData() {
+        group.enter()
         DataSource.fetch(next: "0") {[weak self] response, error in
             guard let self = self else { return }
             if let error {
@@ -26,8 +30,14 @@ class MainVM: MainBussinessLayer {
                     self.personArray.append(person)
                     print("data eklendi")
                 })
-                print("işlem bitti")
+                self.group.leave()
             }
+        }
+    }
+    
+    func reloadTableView(completion: @escaping () -> Void) {
+        group.notify(queue: .main) {
+            completion()
         }
     }
 }

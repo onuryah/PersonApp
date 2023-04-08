@@ -15,7 +15,9 @@ class MainVC: UIViewController {
         viewModel = MainVM()
         setDelagates()
         viewModel?.fetchData()
-        tableView.reloadData()
+        viewModel?.reloadTableView(completion: {
+            self.tableView.reloadData()
+        })
     }
 }
 
