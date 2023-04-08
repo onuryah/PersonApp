@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class MainVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noOneLabel: UILabel!
     
@@ -56,6 +56,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     private func setDelagates() {
         tableView.delegate = self
         tableView.dataSource = self
+        viewModel?.delegate = self
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.personArray.count ?? 0
@@ -64,7 +65,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonCell
         guard let person = viewModel?.personArray[indexPath.row]  else { return cell}
-        cell.personLabel.text = (person.fullName ?? "") + "\(person.id)"
+        cell.personLabel.text = (person.fullName ?? "") + " (\(person.id))"
         //        cell.setLabel()
         return cell
     }

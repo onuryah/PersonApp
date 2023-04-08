@@ -10,6 +10,7 @@ import Foundation
 protocol MainBussinessLayer {
     var personArray: [Person] { get set }
     var pagination: String? { get set }
+    var delegate: BaseDelegateProtocol? { get set }
     func fetchData()
     func reloadTableView(completion: @escaping () -> Void)
 }
@@ -17,17 +18,20 @@ protocol MainBussinessLayer {
 class MainVM: MainBussinessLayer {
     var personArray: [Person] = []
     let group = DispatchGroup()
-    var pagination: String? = "0"
+    var delegate: BaseDelegateProtocol?
+    var pagination: String? = nil
     func fetchData() {
+        self.delegate?.createFailureAlert(failMessage: "errorMessage")
         group.enter()
         DataSource.fetch(next: pagination) {[weak self] response, error in
             guard let self = self else { return }
             if error != nil {
-                print(error?.errorDescription)
+                if let errorMessage = error?.errorDescription {
+                    self.delegate?.createFailureAlert(failMessage: errorMessage)
+                }
             } else {
                 if let next = response?.next {
                     self.pagination = next
-                    print(self.pagination)
                 }
                 response?.people.forEach({ person in
                     self.personArray.append(person)
