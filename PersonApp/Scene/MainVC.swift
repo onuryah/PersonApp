@@ -36,8 +36,21 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonCell
         let person = viewModel?.personArray[indexPath.row]
         cell.personLabel.text = (person?.fullName ?? "") + "\(person?.id)"
-//        cell.setLabel()
+        //        cell.setLabel()
         return cell
+    }
+}
+
+extension MainVC {    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let content = viewModel?.personArray {
+            if indexPath.row == content.count - 1 {
+                viewModel?.fetchData()
+                viewModel?.reloadTableView {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 }
 

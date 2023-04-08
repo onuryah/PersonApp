@@ -17,15 +17,18 @@ class MainVM: MainBussinessLayer {
     var personArray: [Person] = []
 //    let queue = DispatchQueue(label: "com.wait.queue", qos: .background, attributes: .concurrent)
     let group = DispatchGroup()
-    var pagination: String?
+    var pagination = "0"
     func fetchData() {
         group.enter()
-        DataSource.fetch(next: "0") {[weak self] response, error in
+        DataSource.fetch(next: pagination) {[weak self] response, error in
             guard let self = self else { return }
             if error != nil {
-                
+                print(error?.errorDescription)
             } else {
-                self.pagination = response?.next
+                if let next = response?.next {
+                    self.pagination = next
+                    print(self.pagination)
+                }
                 response?.people.forEach({ person in
                     self.personArray.append(person)
                 })
