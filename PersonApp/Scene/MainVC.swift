@@ -9,6 +9,8 @@ import UIKit
 
 class MainVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noOneLabel: UILabel!
+    
     var viewModel: MainBussinessLayer?
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,13 +22,12 @@ class MainVM: MainBussinessLayer {
         group.enter()
         DataSource.fetch(next: "0") {[weak self] response, error in
             guard let self = self else { return }
-            if let error {
+            if error != nil {
                 
             } else {
                 self.pagination = response?.next
                 response?.people.forEach({ person in
                     self.personArray.append(person)
-                    print("data eklendi")
                 })
                 self.group.leave()
             }

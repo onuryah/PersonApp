@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YyR-au-cU4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YyR-au-cU4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -47,18 +47,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No one here :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igb-eT-lNN">
+                                <rect key="frame" x="153" y="437.5" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="on5-N7-UMr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BL6-KP-IKD"/>
+                            <constraint firstItem="igb-eT-lNN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NOZ-fh-OHm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="on5-N7-UMr" secondAttribute="trailing" id="QsL-wl-QSB"/>
                             <constraint firstAttribute="bottom" secondItem="on5-N7-UMr" secondAttribute="bottom" id="a8n-m2-qrN"/>
                             <constraint firstItem="on5-N7-UMr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lGQ-Iv-jVl"/>
+                            <constraint firstItem="igb-eT-lNN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="va8-KI-Kd9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KMb-q6-l2Y"/>
                     <connections>
+                        <outlet property="noOneLabel" destination="igb-eT-lNN" id="DVf-Ox-Lhj"/>
                         <outlet property="tableView" destination="on5-N7-UMr" id="myM-hO-H8Z"/>
                     </connections>
                 </viewController>
