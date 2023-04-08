@@ -19,9 +19,8 @@ class MainVM: MainBussinessLayer {
     var personArray: [Person] = []
     let group = DispatchGroup()
     var delegate: BaseDelegateProtocol?
-    var pagination: String? = nil
+    var pagination: String? = "0"
     func fetchData() {
-        self.delegate?.createFailureAlert(failMessage: "errorMessage")
         group.enter()
         DataSource.fetch(next: pagination) {[weak self] response, error in
             guard let self = self else { return }
@@ -34,7 +33,7 @@ class MainVM: MainBussinessLayer {
                     self.pagination = next
                 }
                 response?.people.forEach({ person in
-                    self.personArray.append(person)
+                    self.addUniquePerson(person: person)
                 })
                 self.group.leave()
             }
@@ -44,6 +43,13 @@ class MainVM: MainBussinessLayer {
     func reloadTableView(completion: @escaping () -> Void) {
         group.notify(queue: .main) {
             completion()
+        }
+    }
+    
+    func addUniquePerson(person: Person) {
+        let existingPerson = personArray.filter { $0.id == person.id }.first
+        if existingPerson == nil {
+            personArray.append(person)
         }
     }
 }
