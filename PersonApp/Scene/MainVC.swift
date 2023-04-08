@@ -11,15 +11,33 @@ class MainVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noOneLabel: UILabel!
     
+    let refreshControl = UIRefreshControl()
     var viewModel: MainBussinessLayer?
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MainVM()
         setDelagates()
+        addRefresh()
         viewModel?.fetchData()
-        viewModel?.reloadTableView(completion: {
+        viewModel?.reloadTableView {
             self.tableView.reloadData()
-        })
+        }
+    }
+    
+    private func addRefresh() {
+           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+           tableView.addSubview(refreshControl) // not required when using UITableViewController
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        viewModel?.pagination = nil
+        viewModel?.personArray.removeAll()
+        self.tableView.reloadData()
+        viewModel?.fetchData()
+        viewModel?.reloadTableView {
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
     }
 }
 
@@ -34,14 +52,14 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonCell
-        let person = viewModel?.personArray[indexPath.row]
-        cell.personLabel.text = (person?.fullName ?? "") + "\(person?.id)"
+        guard let person = viewModel?.personArray[indexPath.row]  else { return cell}
+        cell.personLabel.text = (person.fullName ?? "") + "\(person.id)"
         //        cell.setLabel()
         return cell
     }
 }
 
-extension MainVC {    
+extension MainVC {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let content = viewModel?.personArray {
             if indexPath.row == content.count - 1 {

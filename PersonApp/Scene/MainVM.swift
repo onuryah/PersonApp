@@ -8,16 +8,16 @@
 import Foundation
 
 protocol MainBussinessLayer {
+    var personArray: [Person] { get set }
+    var pagination: String? { get set }
     func fetchData()
-    var personArray: [Person] { get }
     func reloadTableView(completion: @escaping () -> Void)
 }
 
 class MainVM: MainBussinessLayer {
     var personArray: [Person] = []
-//    let queue = DispatchQueue(label: "com.wait.queue", qos: .background, attributes: .concurrent)
     let group = DispatchGroup()
-    var pagination = "0"
+    var pagination: String? = "0"
     func fetchData() {
         group.enter()
         DataSource.fetch(next: pagination) {[weak self] response, error in
