@@ -18,6 +18,8 @@
 		FAF7278F29E13CE300E2C0EE /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7278E29E13CE300E2C0EE /* MainVM.swift */; };
 		FAF7279229E1D35200E2C0EE /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7279129E1D35200E2C0EE /* BaseVC.swift */; };
 		FAF7279429E1D9AF00E2C0EE /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7279329E1D9AF00E2C0EE /* BaseProtocol.swift */; };
+		FAF7279629E1E9E200E2C0EE /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7279529E1E9E200E2C0EE /* ErrorHandler.swift */; };
+		FAF7279829E1EB3A00E2C0EE /* DataSourceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7279729E1EB3A00E2C0EE /* DataSourceExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		FAF7278E29E13CE300E2C0EE /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		FAF7279129E1D35200E2C0EE /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		FAF7279329E1D9AF00E2C0EE /* BaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
+		FAF7279529E1E9E200E2C0EE /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		FAF7279729E1EB3A00E2C0EE /* DataSourceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		FA592BE229E0B8C2007D8ADF /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				FAF7279529E1E9E200E2C0EE /* ErrorHandler.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				FA592BE929E0BCE1007D8ADF /* DataSource.swift */,
+				FAF7279729E1EB3A00E2C0EE /* DataSourceExtension.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -205,8 +211,10 @@
 				FAF7278F29E13CE300E2C0EE /* MainVM.swift in Sources */,
 				FAF7279429E1D9AF00E2C0EE /* BaseProtocol.swift in Sources */,
 				FA592BCA29E0B6CE007D8ADF /* AppDelegate.swift in Sources */,
+				FAF7279829E1EB3A00E2C0EE /* DataSourceExtension.swift in Sources */,
 				FA592BE629E0B9EF007D8ADF /* PersonCell.swift in Sources */,
 				FA592BEA29E0BCE1007D8ADF /* DataSource.swift in Sources */,
+				FAF7279629E1E9E200E2C0EE /* ErrorHandler.swift in Sources */,
 				FAF7279229E1D35200E2C0EE /* BaseVC.swift in Sources */,
 				FA592BCC29E0B6CE007D8ADF /* SceneDelegate.swift in Sources */,
 			);

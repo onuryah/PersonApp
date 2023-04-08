@@ -35,8 +35,8 @@ class MainVM: MainBussinessLayer {
                 response?.people.forEach({ person in
                     self.addUniquePerson(person: person)
                 })
-                self.group.leave()
             }
+            self.group.leave()
         }
     }
     
