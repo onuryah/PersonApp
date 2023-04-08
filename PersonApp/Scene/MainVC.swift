@@ -14,6 +14,8 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         viewModel = MainVM()
         setDelagates()
+        viewModel?.fetchData()
+        tableView.reloadData()
     }
 }
 
@@ -23,12 +25,14 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel?.personArray.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonCell
-        cell.setLabel()
+        let person = viewModel?.personArray[indexPath.row]
+        cell.personLabel.text = (person?.fullName ?? "") + "\(person?.id)"
+//        cell.setLabel()
         return cell
     }
 }
