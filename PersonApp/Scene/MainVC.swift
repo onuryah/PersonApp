@@ -21,6 +21,7 @@ class MainVC: UIViewController {
         viewModel?.fetchData()
         viewModel?.reloadTableView {
             self.tableView.reloadData()
+            self.hideViewsByDataCheck()
         }
     }
     
@@ -37,6 +38,16 @@ class MainVC: UIViewController {
         viewModel?.reloadTableView {
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
+            self.hideViewsByDataCheck()
+        }
+    }
+    
+    private func hideViewsByDataCheck() {
+        guard let people = viewModel?.personArray else { return }
+        if people.isEmpty {
+            noOneLabel.isHidden = false
+        }else {
+            noOneLabel.isHidden = true
         }
     }
 }
