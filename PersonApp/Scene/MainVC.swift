@@ -9,9 +9,10 @@ import UIKit
 
 class MainVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
+    var viewModel: MainBussinessLayer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = MainVM()
         setDelagates()
     }
 }

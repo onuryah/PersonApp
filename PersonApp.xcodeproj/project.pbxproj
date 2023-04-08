@@ -15,6 +15,7 @@
 		FA592BD629E0B6D0007D8ADF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA592BD429E0B6D0007D8ADF /* LaunchScreen.storyboard */; };
 		FA592BE629E0B9EF007D8ADF /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA592BE529E0B9EF007D8ADF /* PersonCell.swift */; };
 		FA592BEA29E0BCE1007D8ADF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA592BE929E0BCE1007D8ADF /* DataSource.swift */; };
+		FAF7278F29E13CE300E2C0EE /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7278E29E13CE300E2C0EE /* MainVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FA592BD729E0B6D0007D8ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA592BE529E0B9EF007D8ADF /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		FA592BE929E0BCE1007D8ADF /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		FAF7278E29E13CE300E2C0EE /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				FA592BE429E0B9CA007D8ADF /* PersonCell */,
 				FA592BCD29E0B6CE007D8ADF /* MainVC.swift */,
+				FAF7278E29E13CE300E2C0EE /* MainVM.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA592BCE29E0B6CE007D8ADF /* MainVC.swift in Sources */,
+				FAF7278F29E13CE300E2C0EE /* MainVM.swift in Sources */,
 				FA592BCA29E0B6CE007D8ADF /* AppDelegate.swift in Sources */,
 				FA592BE629E0B9EF007D8ADF /* PersonCell.swift in Sources */,
 				FA592BEA29E0BCE1007D8ADF /* DataSource.swift in Sources */,
@@ -342,6 +346,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -369,6 +374,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
