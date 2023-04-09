@@ -19,7 +19,7 @@ class MainVM: MainBussinessLayer {
     var personArray: [Person] = []
     let group = DispatchGroup()
     var delegate: BaseDelegateProtocol?
-    var pagination: String? = "0"
+    var pagination: String? = nil
     func fetchData() {
         group.enter()
         DataSource.fetch(next: pagination) {[weak self] response, error in

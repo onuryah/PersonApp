@@ -29,14 +29,6 @@ public class FetchResponse {
 }
 
 
-public class FetchError {
-    let errorDescription: String
-    
-    init(description: String) {
-        self.errorDescription = description
-    }
-}
-
 public typealias FetchCompletionHandler = (FetchResponse?, FetchError?) -> ()
 
 
@@ -94,7 +86,7 @@ public class DataSource {
         
         if isError {
             waitTime = RandomUtils.generateRandomDouble(inClosedRange: Constants.lowWaitTimeRange)
-            error = FetchError(description: "Internal Server Error")
+            error = FetchError(errorType: .serverError)
         }
         else {
             waitTime = RandomUtils.generateRandomDouble(inClosedRange: Constants.highWaitTimeRange)
@@ -102,7 +94,7 @@ public class DataSource {
             let peopleCount = people.count
 
             if let next = next, (Int(next) == nil || Int(next)! < 0) {
-                error = FetchError(description: "Parameter error")
+                error = FetchError(errorType: .parameterError)
             }
             else {
                 let endIndex: Int = min(peopleCount, fetchCount + (next == nil ? 0 : (Int(next!) ?? 0)))

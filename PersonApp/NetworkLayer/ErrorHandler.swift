@@ -1,55 +1,31 @@
 //
-//  ErrorHandler.swift
+//  DataSourceExtension.swift
 //  PersonApp
 //
 //  Created by Macbook on 8.04.2023.
 //
 
 
-import Foundation
-
-protocol ErrorModifier: Error, LocalizedError, CustomNSError, Equatable {}
-
-enum ErrorType: Int {
-    case invalidJson
-    case invalidUrl
-    case invalidBody
-}
-
-enum NetworkError: ErrorModifier {
-    static func == (lhs: NetworkError, rhs: NetworkError) -> Bool {
-        lhs.errorCode == rhs.errorCode
+public class FetchError {
+    init(errorType: ErrorType) {
+        self.errorType = errorType
     }
-    case serverError(code:Int, error: String, stringCode: String?)
-    case invalidJson(_ message: Error)
-    case invalidUrl(_ url: String)
-    case invalidBody(_ url: String, error: Error)
     
-    var errorCode: Int {
-        switch self {
-        case .serverError(let code, _, _):
-            return code
-        case .invalidJson(_):
-            return ErrorType.invalidBody.rawValue
-        case .invalidUrl(_):
-            return ErrorType.invalidUrl.rawValue
-        case .invalidBody(_, error: _):
-            return ErrorType.invalidBody.rawValue
+    enum ErrorType: Error {
+        case serverError
+        case parameterError
+    }
+    
+    let errorType: ErrorType
+    
+    
+    var errorDescription: String {
+        switch errorType {
+        case .serverError:
+            return "Internal Server Error"
+        case .parameterError:
+            return "Parameter error"
         }
     }
-    
-    var errorDescription: String? {
-        switch self {
-        case .serverError(_, let error, _):
-            return error
-        case .invalidJson:
-            return "Invalid JsonParser"
-        case .invalidUrl:
-            return "Invalid URL"
-        case .invalidBody(_, let error):
-            return "Invalid Body \(error)"
-        }
-    }
-    
-  
 }
+
