@@ -26,8 +26,8 @@ class MainVC: BaseVC {
     }
     
     private func addRefresh() {
-           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-           tableView.addSubview(refreshControl) // not required when using UITableViewController
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl) // not required when using UITableViewController
     }
     
     @objc func refresh(_ sender: AnyObject) {
@@ -65,8 +65,7 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonCell
         guard let person = viewModel?.personArray[indexPath.row]  else { return cell}
-        cell.personLabel.text = (person.fullName ?? "") + " (\(person.id))"
-        //        cell.setLabel()
+        cell.setLabel(person: person)
         return cell
     }
 }

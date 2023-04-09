@@ -17,8 +17,7 @@ public class FetchError {
     }
     
     let errorType: ErrorType
-    
-    
+
     var errorDescription: String {
         switch errorType {
         case .serverError:

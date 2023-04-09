@@ -19,7 +19,7 @@ class MainVM: MainBussinessLayer {
     var personArray: [Person] = []
     let group = DispatchGroup()
     var delegate: BaseDelegateProtocol?
-    var pagination: String? = "0"
+    var pagination: String? = nil
     var delay = 3.0
     var delayIncreaser = 3.0
     
