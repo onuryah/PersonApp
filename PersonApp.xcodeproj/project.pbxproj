@@ -15,6 +15,7 @@
 		FA592BD629E0B6D0007D8ADF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA592BD429E0B6D0007D8ADF /* LaunchScreen.storyboard */; };
 		FA592BE629E0B9EF007D8ADF /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA592BE529E0B9EF007D8ADF /* PersonCell.swift */; };
 		FA592BEA29E0BCE1007D8ADF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA592BE929E0BCE1007D8ADF /* DataSource.swift */; };
+		FA64CF7F29E389B300D1C20B /* MainTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64CF7E29E389B300D1C20B /* MainTableViewDataSource.swift */; };
 		FAF7278F29E13CE300E2C0EE /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7278E29E13CE300E2C0EE /* MainVM.swift */; };
 		FAF7279229E1D35200E2C0EE /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7279129E1D35200E2C0EE /* BaseVC.swift */; };
 		FAF7279429E1D9AF00E2C0EE /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7279329E1D9AF00E2C0EE /* BaseProtocol.swift */; };
@@ -32,6 +33,7 @@
 		FA592BD729E0B6D0007D8ADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA592BE529E0B9EF007D8ADF /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		FA592BE929E0BCE1007D8ADF /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		FA64CF7E29E389B300D1C20B /* MainTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewDataSource.swift; sourceTree = "<group>"; };
 		FAF7278E29E13CE300E2C0EE /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		FAF7279129E1D35200E2C0EE /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		FAF7279329E1D9AF00E2C0EE /* BaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				FA592BE429E0B9CA007D8ADF /* PersonCell */,
 				FA592BCD29E0B6CE007D8ADF /* MainVC.swift */,
 				FAF7278E29E13CE300E2C0EE /* MainVM.swift */,
+				FA64CF7E29E389B300D1C20B /* MainTableViewDataSource.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				FA592BCE29E0B6CE007D8ADF /* MainVC.swift in Sources */,
 				FAF7278F29E13CE300E2C0EE /* MainVM.swift in Sources */,
 				FAF7279429E1D9AF00E2C0EE /* BaseProtocol.swift in Sources */,
+				FA64CF7F29E389B300D1C20B /* MainTableViewDataSource.swift in Sources */,
 				FA592BCA29E0B6CE007D8ADF /* AppDelegate.swift in Sources */,
 				FAF7279829E1EB3A00E2C0EE /* ErrorHandler.swift in Sources */,
 				FA592BE629E0B9EF007D8ADF /* PersonCell.swift in Sources */,
